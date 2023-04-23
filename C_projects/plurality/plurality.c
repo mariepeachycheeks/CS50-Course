@@ -1,18 +1,16 @@
-#include "../cs50/cs50.h"
+#include <cs50.h>
 #include <stdio.h>
 #include <string.h>
 
 // Max number of candidates
 const int MAX = 9;
 
-
 // Candidates have name and vote count
 typedef struct
 {
     string name;
     int votes;
-}
-candidate;
+} candidate;
 
 // Array of candidates
 candidate candidates[MAX];
@@ -52,7 +50,6 @@ int main(int argc, string argv[])
     for (int i = 0; i < voter_count; i++)
     {
         string name = get_string("Vote: ");
-
         // Check for invalid vote
         if (!vote(name))
         {
@@ -82,26 +79,30 @@ bool vote(string name)
 void print_winner(void)
 {
     int swap = 1;
-    while (swap != 0){
-        for (int k = 0; k < MAX ; k++){
-            if (candidates[k].votes < candidates[k+1].votes){
+    while (swap != 0)
+    {
+        for (int k = 0; k < MAX; k++)
+        {
+            if (candidates[k].votes < candidates[k + 1].votes)
+            {
                 candidate change = candidates[k];
-                candidates[k] = candidates[k+1];
-                candidates[k+1] = change;
-                swap ++;
+                candidates[k] = candidates[k + 1];
+                candidates[k + 1] = change;
+                swap++;
                 k++;
             }
         }
-    printf("candidate‰\n", candidates[MAX].name);
-    printf("\n");
-    for (int n = MAX; n > 0; n--)
-    {
+        printf("candidate‰\n", candidates[MAX].name);
+        printf("\n");
+        for (int n = MAX; n > 0; n--)
+        {
 
-       if (candidates[n].votes == candidates[n-1].votes)
-       {
-            printf("candidate‰\n", candidates[n-1].name);
-            printf("\n");
-       }
-       return 0;
+            if (candidates[n].votes == candidates[n - 1].votes)
+            {
+                printf("candidate‰\n", candidates[n - 1].name);
+                printf("\n");
+            }
+            // return 0;
+        }
     }
 }
