@@ -2,7 +2,7 @@
 // Practice iterating through a string
 // Practice using the ctype library
 
-#include "../cs50/cs50.h"
+#include <cs50.h>
 #include <stdio.h>
 #include <string.h>
 

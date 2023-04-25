@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "./cs50/cs50.h"
+#include <cs50.h>
 
 const int N = 3;
 

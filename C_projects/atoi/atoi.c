@@ -1,8 +1,9 @@
-#include "../cs50/cs50.h"
 #include <ctype.h>
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
+#include <cs50.h>
+
 
 int convert(string input);
 int number =0;
